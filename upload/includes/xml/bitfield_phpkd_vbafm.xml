@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<bitfields product="phpkd_vbafm">
+	<bitfielddefs>
+		<group name="ugp">
+			<group name="attachpermissions">
+				<bitfield name="followforummoderation"      group="attachment_permissions"      phrase="phpkd_vbafm_follow_forum_moderation_rules" install="1,2,3,4,5,6,7">1</bitfield>
+			</group>
+		</group>
+	</bitfielddefs>
+</bitfields>
+
+<!-- SVN: $Version: 4.0.100 $ - $Id: bitfield_phpkd_vbafm.xml 130 2010-02-16 19:56:36Z PHPKD $ -->

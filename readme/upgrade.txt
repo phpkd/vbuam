@@ -1,0 +1,54 @@
+﻿Upgrade Procedure:
+~~~~~~~~~~~~~~~~~~~~~~~~
+     1. Upload required files to their appropriate places (ALLOW OVERWRITE):
+	includes
+	     xml
+	          bitfield_phpkd_vbafm.xml
+	     md5_sums_phpkd_vbafm.php
+
+     2. Do the following small manual edit, open the file "includes/class_upload.php" (follow instructions relative to your vB version):
+	3.8.x: 
+	     Search for:
+			if (isset($this->foruminfo['moderateattach']))
+			{
+				$visible = ((!$this->foruminfo['moderateattach'] OR can_moderate($this->foruminfo['forumid'], 'canmoderateattachments')) ? 1 : 0);
+			}
+
+	     Replace with:
+			// PHPKD - Usergroup Attachment Moderation
+			if (isset($this->foruminfo['moderateattach']) OR isset($this->registry->bf_ugp_attachpermissions['followforummoderation']))
+			{
+				$visible = (((!$this->foruminfo['moderateattach'] OR can_moderate($this->foruminfo['forumid'], 'canmoderateattachments')) AND ($this->registry->userinfo['permissions']['attachpermissions'] & $this->registry->bf_ugp_attachpermissions['followforummoderation'])) ? 1 : 0);
+			}
+
+	4.0.x: 
+	     Search for:
+		$this->data->setr_info('thumbnail', $this->upload['thumbnail']['filedata']);
+
+	     Add under it directly the following code:
+		// PHPKD - Usergroup Attachment Moderation
+		if ($this->data->fetch_field('state') === null)
+		{
+			if (($this->foruminfo['moderateattach'] == 1 AND !can_moderate($this->foruminfo['forumid'], 'canmoderateattachments')) OR !($this->registry->userinfo['permissions']['attachpermissions'] & $this->registry->bf_ugp_attachpermissions['followforummoderation']))
+			{
+				$state = 'moderation';
+			}
+			else
+			{
+				// default an attachment with no specified visibility to true
+				$state = 'visible';
+			}
+			$this->data->set('state', $state);
+		}
+
+	     Save the modified file "includes/class_upload.php" and upload it to it's place again (ALLOW OVERWRITE).
+
+
+     3. Import the product's XML file "product-phpkd_vbafm.xml" from AdminCP (ALLOW OVERWRITE).
+
+     4. Configure usergroup settings -if required-.
+
+     5. You're Done :).
+
+
+$Version: 4.0.131 $ - $Id: upgrade.txt 128 2010-02-17 08:33:40Z PHPKD $

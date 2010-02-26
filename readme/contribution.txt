@@ -1,0 +1,214 @@
+[SIZE="2"][B][FONT="Tahoma"][B][CENTER]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!.................. Brought to you by PHP KingDom ([url]www.phpkd.net[/url]) ..................!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[/CENTER][/B][/FONT][/B][/SIZE]
+
+
+
+[B][COLOR="Red"]Please remember to click [COLOR="Blue"]Mark as Installed[/COLOR] if you use this product.[/COLOR]
+[COLOR="Purple"]Support requests from members who have not marked this as installed will be considered low priority.[/COLOR][/B]
+
+
+[B]Name:[/B] PHPKD - Usergroup Attachment Moderation
+[B]Version:[/B] 4.0.100
+
+[B]Description:[/B] This product adds new permission per usergroup "Follow Forum Moderation Rules", which if set to 'no' it will force all attachments posted by this usergroup's users to be placed into moderation queue by default.
+
+
+[B]Compatible with:[/B] All 3.8.x/4.0.x vBulletin versions.
+
+
+[U][B]Requirements:[/B][/U]
+[LIST]
+     [*]vBulletin version 3.8.x/4.0.x
+[/LIST]
+
+
+[U][B]Helpful links:[/B][/U]
+[LIST]
+     [*][url="http://forum.phpkd.net/project.php?do=issuelist&projectid=2&issuetypeid=bug"]Bug Reports[/url]
+     [*][url="http://forum.phpkd.net/project.php?do=issuelist&projectid=2&issuetypeid=feature"]Feature Requests[/url]
+[/LIST]
+
+
+[U][B]Features:[/B][/U]
+[LIST]
+     [*][U][B]General Features:-[/B][/U]
+	[LIST]
+	     [*]MD5 checked.
+	     [*]Zero Queries.
+	     [*]Fully Phrased.
+	     [*]Fully Supported.
+	     [*]Accurate Processing.
+	     [*]Professionally Coded.
+	     [*]Detailed Documentation.
+	     [*]Requires only one manual edit.
+	     [*]Doing all default vBulletin checks & vBulletin Fully Compatible.
+	     [*][url="http://www.vbulletin.com/forum/project.php?issueid=36492"]Fix a vBulletin 4 Bug: Forum Option "Moderate Attachments" not working[/url].
+	[/LIST]
+[/LIST]
+
+
+[U][B]Installation Procedure:[/B][/U]
+[LIST=1]
+     [*]Upload required files to their appropriate places:
+	[LIST]
+	     [*]includes
+		[LIST]
+		     [*]xml
+			[LIST]
+			      [*]bitfield_phpkd_vbafm.xml
+			[/LIST]
+		     [*]md5_sums_phpkd_vbafm.php
+		[/LIST]
+	[/LIST]
+     [*]Do the following small manual edit, open the file "includes/class_upload.php" (follow instructions relative to your vB version):
+	[B]3.8.x:[/B]
+	     [U]Search for:[/U]
+			[CODE]if (isset($this->foruminfo['moderateattach']))
+			{
+				$visible = ((!$this->foruminfo['moderateattach'] OR can_moderate($this->foruminfo['forumid'], 'canmoderateattachments')) ? 1 : 0);
+			}[/CODE]
+
+	     [U]Replace with:[/U]
+			[CODE]// PHPKD - Usergroup Attachment Moderation
+			if (isset($this->foruminfo['moderateattach']) OR isset($this->registry->bf_ugp_attachpermissions['followforummoderation']))
+			{
+				$visible = (((!$this->foruminfo['moderateattach'] OR can_moderate($this->foruminfo['forumid'], 'canmoderateattachments')) AND ($this->registry->userinfo['permissions']['attachpermissions'] & $this->registry->bf_ugp_attachpermissions['followforummoderation'])) ? 1 : 0);
+			}[/CODE]
+
+	[B]4.0.x:[/B]
+	     [U]Search for:[/U]
+		[CODE]$this->data->setr_info('thumbnail', $this->upload['thumbnail']['filedata']);[/CODE]
+
+	     [U]Add under it directly the following code:[/U]
+		[CODE]// PHPKD - Usergroup Attachment Moderation
+		if ($this->data->fetch_field('state') === null)
+		{
+			if (($this->foruminfo['moderateattach'] == 1 AND !can_moderate($this->foruminfo['forumid'], 'canmoderateattachments')) OR !($this->registry->userinfo['permissions']['attachpermissions'] & $this->registry->bf_ugp_attachpermissions['followforummoderation']))
+			{
+				$state = 'moderation';
+			}
+			else
+			{
+				// default an attachment with no specified visibility to true
+				$state = 'visible';
+			}
+			$this->data->set('state', $state);
+		}[/CODE]
+	[B]Save the modified file "includes/class_upload.php" and upload it to it's place again (ALLOW OVERWRITE).[/B]
+     [*]Import the product's XML file "product-phpkd_vbafm.xml" from AdminCP.
+     [*]Configure usergroup settings -if required-.
+     [*]You're Done :).
+[/LIST]
+
+
+[U][B]Upgrade Procedure:[/B][/U]
+[LIST=1]
+     [*]Same as "Installation Procedure", but "Allow Overwrite" for both file uploads & product import.
+[/LIST]
+
+
+[U][B]Controls:[/B][/U]
+[LIST]
+     [*][B][U]Usergroup Permissions:[/U][/B]
+     vBulletin AdminCP » Usergroups » Usergroup Manager » Select usergroup to edit » Attachment Permissions » [B]Follow Forum Moderation Rules[/B]
+[/LIST]
+
+
+[U][B]License:[/B][/U]
+[URL="http://info.phpkd.net/en/license/free/"]Read Here: http://info.phpkd.net/en/license/free/[/URL]
+--------------- --------------- --------------- ---------------
+Creative Commons - Attribution-Noncommercial-Share Alike 3.0
+[url]http://creativecommons.org/licenses/by-nc-sa/3.0/[/url]
+--------------- --------------- --------------- ---------------
+[LIST]
+     [*][B][U]You are free:[/U][/B]
+     [LIST]
+	[*]To Share — to copy, distribute and transmit the work
+	[*]To Remix — to adapt the work
+     [/LIST]
+
+
+     [*][B][U]Under the following conditions:[/U][/B]
+     [LIST]
+	[*][B][Attribution]:[/B] You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+	[*][B][Noncommercial]:[/B] You may not use this work for commercial purposes.
+	[*][B][Share Alike]:[/B] If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one.
+     [/LIST]
+
+
+     [*]For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do this is with a link to [url="http://creativecommons.org/licenses/by-nc-sa/3.0/"]this web page[/url].
+     [*]Any of the above conditions can be waived if you get explicit permission from the copyright holder.
+     [*]Nothing in this license impairs or restricts the author's moral rights.
+[/LIST]
+--------------- --------------- --------------- ---------------
+Your fair dealing and other rights are in no way affected by the above.
+This is a human-readable summary of the Legal Code (the full license).
+[url]http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode[/url]
+--------------- --------------- --------------- ---------------
+
+
+[U][B]Help with:[/B][/U]
+[LIST]
+	[*]Translations to benefit more users.
+	[*]Suggestions & feature requests to develop this product.
+	[*]Contributing any updates, upgrades and/or any new features.
+	[*]Spreading this product. Yes, you're free to re-distribute this product as it is (See 'Free License' details).
+[/LIST]
+
+
+[U][B]Known Issues:[/B][/U]
+[LIST]
+     [*]Nothing till now!
+[/LIST]
+
+
+[U][B]Future TO-DO-LIST:[/B][/U]
+[LIST]
+     [*]Post your suggestions!
+[/LIST]
+
+
+[U][B]History:[/B][/U]
+[LIST]
+     [*][B]v3.8.100[/B] 31/12/2008 08:00 AM UTC: First 3.8.x release (public)
+     [*][B]v4.0.100[/B] 26/02/2010 08:00 PM UTC: First 4.0.x release (public)
+[/LIST]
+
+
+[U][B]Screen Shots:[/B][/U]
+[LIST]
+     [*]Available down there.
+[/LIST]
+
+
+[U][B]Technical Notes:[/B][/U]
+[LIST]
+     [*][COLOR="DimGray"]New Plugins:[/COLOR] 0
+     [*][COLOR="DimGray"]New Phrases:[/COLOR] 1
+     [*][COLOR="dimgray"]New Templates:[/COLOR] 0
+     [*][COLOR="dimgray"]Manual Template changes:[/COLOR] 0
+     [*][COLOR="dimgray"]Auto Template changes:[/COLOR] 0
+     [*][COLOR="dimgray"]New Files:[/COLOR] 2
+     [*][COLOR="dimgray"]Manual File Changes:[/COLOR] 1
+     [*][COLOR="dimgray"]New vBulletin Settings:[/COLOR] 0
+     [*][COLOR="dimgray"]New Usergroup Permissions:[/COLOR] 1
+     [*][COLOR="dimgray"]New Moderator Permissions:[/COLOR] 0
+     [*][COLOR="dimgray"]New Administrator Permissions:[/COLOR] 0
+     [*][COLOR="dimgray"]New Forum Options:[/COLOR] 0
+     [*][COLOR="dimgray"]New DB Tables:[/COLOR] 0
+     [*][COLOR="dimgray"]DB Alterations:[/COLOR] 1
+     [*][COLOR="dimgray"]New Cronjobs:[/COLOR] 0
+     --------------------------------
+     [*][COLOR="dimgray"]Installation Level:[/COLOR] V.Easy
+     [*][COLOR="dimgray"]Installation Time:[/COLOR] ~10 seconds
+[/LIST]
+
+
+[B][U]Recent Products:[/U][/B]
+[LIST]
+     [*][URL="http://tools.phpkd.net/en/producthelp/url/vblvb/"]PHPKD - vB Link Verifier Bot[/URL]
+     [*][URL="http://tools.phpkd.net/en/producthelp/url/vbaqr/"]Advanced Quick Reply [ Attachments - Smilie box / menu - Thread Management - AJAX ][/URL]
+     [*][URL="http://tools.phpkd.net/en/producthelp/url/vbaqe/"]Advanced Quick Edit [ All Built-In BBCodes ][/URL]
+[/LIST]
