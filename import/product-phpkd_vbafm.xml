@@ -5,9 +5,9 @@
 	<description><![CDATA[This product adds new permission per usergroup "Follow Forum Moderation Rules", which if set to 'no' it will force all attachments posted by this usergroup's users to be placed into moderation queue by default.]]></description>
 	<version>4.0.100</version>
 	<vendor><![CDATA[$Vendor: PHP KingDom $]]></vendor>
-	<author><![CDATA[$Author: PHPKD $]]></author>
-	<revision><![CDATA[$Revision: 129 $]]></revision>
-	<released><![CDATA[$Date: 2010-02-17 10:45:34 +0200 (Wed, 17 Feb 2010) $]]></released>
+	<author><![CDATA[$Author$]]></author>
+	<revision><![CDATA[$Revision$]]></revision>
+	<released><![CDATA[$Date$]]></released>
 	<url>http://tools.phpkd.net/en/producthelp/url/vbafm/</url>
 	<versioncheckurl>http://tools.phpkd.net/en/producthelp/version/vbafm/</versioncheckurl>
 	<extradetails><![CDATA[http://tools.phpkd.net/en/producthelp/info/vbafm/]]></extradetails>

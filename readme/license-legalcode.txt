@@ -93,4 +93,5 @@ EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE LI
     Creative Commons may be contacted at http://creativecommons.org/.
 ================================================================================================================
 
-$Version: 4.0.131 $ - $Id: license-legalcode.txt 128 2010-02-17 08:33:40Z PHPKD $
+
+$Version: 4.0.100 $ - $Id$

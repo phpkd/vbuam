@@ -27,4 +27,5 @@
      http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
      _____________________________________________________________
 
-$Version: 4.0.131 $ - $Id: license.txt 128 2010-02-17 08:33:40Z PHPKD $
+
+$Version: 4.0.100 $ - $Id$
