@@ -207,8 +207,8 @@ Reference Links:
 Recent Products:
 ~~~~~~~~~~~~~~~~~
 
-     * PHPKD - Usergroup Attachment Moderation
-	http://tools.phpkd.net/en/producthelp/url/vbafm/
+     * PHPKD - vB Link Verifier Bot
+	http://tools.phpkd.net/en/producthelp/url/vblvb/
 
      * Advanced Quick Reply [ Attachments - Smilie box / menu - Thread Management - AJAX ]
 	http://tools.phpkd.net/en/producthelp/url/vbaqr/
