@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <product productid="phpkd_vbafm" active="1">
-	<title>PHPKD - Usergroup Attachment Moderation</title>
+	<title><![CDATA[PHPKD - Usergroup Attachment Moderation]]></title>
 	<description><![CDATA[This product adds new permission per usergroup "Follow Forum Moderation Rules", which if set to 'no' it will force all attachments posted by this usergroup's users to be placed into moderation queue by default.]]></description>
-	<version>4.0.100</version>
+	<version><![CDATA[4.0.100]]></version>
 	<vendor><![CDATA[$Vendor: PHP KingDom $]]></vendor>
 	<author><![CDATA[$Author$]]></author>
 	<revision><![CDATA[$Revision$]]></revision>
 	<released><![CDATA[$Date$]]></released>
-	<url>http://tools.phpkd.net/en/producthelp/url/vbafm/</url>
-	<versioncheckurl>http://tools.phpkd.net/en/producthelp/version/vbafm/</versioncheckurl>
+	<url><![CDATA[http://tools.phpkd.net/en/producthelp/url/vbafm/]]></url>
+	<versioncheckurl><![CDATA[http://tools.phpkd.net/en/producthelp/version/vbafm/]]></versioncheckurl>
 	<extradetails><![CDATA[http://tools.phpkd.net/en/producthelp/info/vbafm/]]></extradetails>
 	<dependencies>
 		<dependency dependencytype="vbulletin" minversion="3.8.0" maxversion="4.0.99" />
