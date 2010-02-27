@@ -59,7 +59,7 @@ Installation Procedure:
 	     md5_sums_phpkd_vbafm.php
 
      2. Do the following small manual edit, open the file "includes/class_upload.php" (follow instructions relative to your vB version):
-	3.8.x: 
+	3.8.x:
 	     Search for:
 -------------------------------------------------
 =================================================
@@ -81,7 +81,7 @@ Installation Procedure:
 =================================================
 -------------------------------------------------
 
-	4.0.x: 
+	4.0.x:
 	     Search for:
 -------------------------------------------------
 =================================================
