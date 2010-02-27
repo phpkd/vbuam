@@ -39,12 +39,12 @@ Features:
 ~~~~~~~~~~
      |- General Features:-
 	* MD5 checked.
-	* Zero Queries.
 	* Fully Phrased.
 	* Fully Supported.
 	* Accurate Processing.
 	* Professionally Coded.
 	* Detailed Documentation.
+	* Zero Additional Queries.
 	* Requires only one manual edit.
 	* Doing all default vBulletin checks & vBulletin Fully Compatible.
 	* Fix a vBulletin 4 Bug: Forum Option "Moderate Attachments" not working (http://www.vbulletin.com/forum/project.php?issueid=36492).
