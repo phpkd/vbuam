@@ -173,7 +173,7 @@ This is a human-readable summary of the Legal Code (the full license).
 [U][B]History:[/B][/U]
 [LIST]
      [*][B]v3.8.100[/B] 31/12/2008 08:00 AM UTC: First 3.8.x release (public)
-     [*][B]v4.0.100[/B] 26/02/2010 08:00 PM UTC: First 4.0.x release (public)
+     [*][B]v4.0.100[/B] 26/02/2010 08:00 AM UTC: First 4.0.x release (public)
 [/LIST]
 
 
