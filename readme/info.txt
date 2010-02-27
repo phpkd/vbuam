@@ -61,23 +61,37 @@ Installation Procedure:
      2. Do the following small manual edit, open the file "includes/class_upload.php" (follow instructions relative to your vB version):
 	3.8.x: 
 	     Search for:
+-------------------------------------------------
+=================================================
 			if (isset($this->foruminfo['moderateattach']))
 			{
 				$visible = ((!$this->foruminfo['moderateattach'] OR can_moderate($this->foruminfo['forumid'], 'canmoderateattachments')) ? 1 : 0);
 			}
+=================================================
+-------------------------------------------------
 
 	     Replace with:
+-------------------------------------------------
+=================================================
 			// PHPKD - Usergroup Attachment Moderation
 			if (isset($this->foruminfo['moderateattach']) OR isset($this->registry->bf_ugp_attachpermissions['followforummoderation']))
 			{
 				$visible = (((!$this->foruminfo['moderateattach'] OR can_moderate($this->foruminfo['forumid'], 'canmoderateattachments')) AND ($this->registry->userinfo['permissions']['attachpermissions'] & $this->registry->bf_ugp_attachpermissions['followforummoderation'])) ? 1 : 0);
 			}
+=================================================
+-------------------------------------------------
 
 	4.0.x: 
 	     Search for:
+-------------------------------------------------
+=================================================
 		$this->data->setr_info('thumbnail', $this->upload['thumbnail']['filedata']);
+=================================================
+-------------------------------------------------
 
 	     Add under it directly the following code:
+-------------------------------------------------
+=================================================
 		// PHPKD - Usergroup Attachment Moderation
 		if ($this->data->fetch_field('state') === null)
 		{
@@ -92,6 +106,8 @@ Installation Procedure:
 			}
 			$this->data->set('state', $state);
 		}
+=================================================
+-------------------------------------------------
 
 	     Save the modified file "includes/class_upload.php" and upload it to it's place again (ALLOW OVERWRITE).
 
