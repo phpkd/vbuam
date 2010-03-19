@@ -12,7 +12,7 @@
 [B]Name:[/B] PHPKD - Usergroup Attachment Moderation
 [B]Version:[/B] 4.0.100
 
-[B]Description:[/B] This product adds new permission per usergroup "Follow Forum Moderation Rules", which if set to 'no' it will force all attachments posted by this usergroup's users to be placed into moderation queue by default.
+[B]Description:[/B] This product adds new permission per usergroup "Follow Forum Moderation Rules", which if set to 'no' it will force all attachments posted by this usergroup to be placed into moderation queue by default.
 
 
 [B]Compatible with:[/B] All 3.8.x/4.0.x vBulletin versions.
@@ -44,7 +44,6 @@
 	     [*]Zero Additional Queries.
 	     [*]Requires only one manual edit.
 	     [*]Doing all default vBulletin checks & vBulletin Fully Compatible.
-	     [*][url="http://www.vbulletin.com/forum/project.php?issueid=36492"]Fix a vBulletin 4 Bug: Forum Option "Moderate Attachments" not working[/url].
 	[/LIST]
 [/LIST]
 
@@ -82,19 +81,10 @@
 		[CODE]$this->data->setr_info('thumbnail', $this->upload['thumbnail']['filedata']);[/CODE]
 
 	     [U]Add under it directly the following code:[/U]
-		[CODE]// PHPKD - Usergroup Attachment Moderation
-		if ($this->data->fetch_field('state') === null)
+		[CODE]		// PHPKD - Usergroup Attachment Moderation
+		if (isset($this->registry->bf_ugp_attachpermissions['followforummoderation']) AND !($this->registry->userinfo['permissions']['attachpermissions'] & $this->registry->bf_ugp_attachpermissions['followforummoderation']))
 		{
-			if (($this->foruminfo['moderateattach'] == 1 AND !can_moderate($this->foruminfo['forumid'], 'canmoderateattachments')) OR !($this->registry->userinfo['permissions']['attachpermissions'] & $this->registry->bf_ugp_attachpermissions['followforummoderation']))
-			{
-				$state = 'moderation';
-			}
-			else
-			{
-				// default an attachment with no specified visibility to true
-				$state = 'visible';
-			}
-			$this->data->set('state', $state);
+			$this->data->set('state', 'moderation');
 		}[/CODE]
 	[B]Save the modified file "includes/class_upload.php" and upload it to it's place again (ALLOW OVERWRITE).[/B]
      [*]Import the product's XML file "product-phpkd_vbafm.xml" from AdminCP.
@@ -173,7 +163,7 @@ This is a human-readable summary of the Legal Code (the full license).
 [U][B]History:[/B][/U]
 [LIST]
      [*][B]v3.8.100[/B] 31/12/2008 08:00 AM UTC: First 3.8.x release (public)
-     [*][B]v4.0.100[/B] 26/02/2010 08:00 AM UTC: First 4.0.x release (public)
+     [*][B]v4.0.100[/B] 19/03/2010 08:00 AM UTC: First 4.0.x release (public)
 [/LIST]
 
 
@@ -202,13 +192,13 @@ This is a human-readable summary of the Legal Code (the full license).
      [*][COLOR="dimgray"]New Cronjobs:[/COLOR] 0
      --------------------------------
      [*][COLOR="dimgray"]Installation Level:[/COLOR] V.Easy
-     [*][COLOR="dimgray"]Installation Time:[/COLOR] ~10 seconds
+     [*][COLOR="dimgray"]Installation Time:[/COLOR] ~15 seconds
 [/LIST]
 
 
 [B][U]Recent Products:[/U][/B]
 [LIST]
-     [*][URL="http://tools.phpkd.net/en/producthelp/url/vblvb/"]PHPKD - vB Link Verifier Bot[/URL]
-     [*][URL="http://tools.phpkd.net/en/producthelp/url/vbaqr/"]Advanced Quick Reply [ Attachments - Smilie box / menu - Thread Management - AJAX ][/URL]
-     [*][URL="http://tools.phpkd.net/en/producthelp/url/vbaqe/"]Advanced Quick Edit [ All Built-In BBCodes ][/URL]
+     [*][URL="http://go.phpkd.net/en/product/vblvb/"]PHPKD - vB Link Verifier Bot[/URL] [FONT="Impact"][COLOR="Red"][I]New ![/I][/COLOR][/FONT]
+     [*][URL="http://go.phpkd.net/en/product/vbaqr/"]PHPKD - vB Advanced Quick Reply 'Ultimate'[/URL] [FONT="Impact"][COLOR="Red"][I]New ![/I][/COLOR][/FONT]
+     [*][URL="http://go.phpkd.net/en/product/vbaqe/"]PHPKD - vB Advanced Quick Edit [ All Built-In BBCodes ][/URL]
 [/LIST]

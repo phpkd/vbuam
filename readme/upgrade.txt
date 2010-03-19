@@ -41,18 +41,9 @@
 -------------------------------------------------
 =================================================
 		// PHPKD - Usergroup Attachment Moderation
-		if ($this->data->fetch_field('state') === null)
+		if (isset($this->registry->bf_ugp_attachpermissions['followforummoderation']) AND !($this->registry->userinfo['permissions']['attachpermissions'] & $this->registry->bf_ugp_attachpermissions['followforummoderation']))
 		{
-			if (($this->foruminfo['moderateattach'] == 1 AND !can_moderate($this->foruminfo['forumid'], 'canmoderateattachments')) OR !($this->registry->userinfo['permissions']['attachpermissions'] & $this->registry->bf_ugp_attachpermissions['followforummoderation']))
-			{
-				$state = 'moderation';
-			}
-			else
-			{
-				// default an attachment with no specified visibility to true
-				$state = 'visible';
-			}
-			$this->data->set('state', $state);
+			$this->data->set('state', 'moderation');
 		}
 =================================================
 -------------------------------------------------

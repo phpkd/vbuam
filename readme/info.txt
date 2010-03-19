@@ -16,7 +16,7 @@ Version:
 
 Description:
 ~~~~~~~~~~~~~
-     * This product adds new permission per usergroup "Follow Forum Moderation Rules", which if set to 'no' it will force all attachments posted by this usergroup's users to be placed into moderation queue by default.
+     * This product adds new permission per usergroup "Follow Forum Moderation Rules", which if set to 'no' it will force all attachments posted by this usergroup to be placed into moderation queue by default.
 
 
 Compatible with:
@@ -47,7 +47,6 @@ Features:
 	* Zero Additional Queries.
 	* Requires only one manual edit.
 	* Doing all default vBulletin checks & vBulletin Fully Compatible.
-	* Fix a vBulletin 4 Bug: Forum Option "Moderate Attachments" not working (http://www.vbulletin.com/forum/project.php?issueid=36492).
 
 
 Installation Procedure:
@@ -93,18 +92,9 @@ Installation Procedure:
 -------------------------------------------------
 =================================================
 		// PHPKD - Usergroup Attachment Moderation
-		if ($this->data->fetch_field('state') === null)
+		if (isset($this->registry->bf_ugp_attachpermissions['followforummoderation']) AND !($this->registry->userinfo['permissions']['attachpermissions'] & $this->registry->bf_ugp_attachpermissions['followforummoderation']))
 		{
-			if (($this->foruminfo['moderateattach'] == 1 AND !can_moderate($this->foruminfo['forumid'], 'canmoderateattachments')) OR !($this->registry->userinfo['permissions']['attachpermissions'] & $this->registry->bf_ugp_attachpermissions['followforummoderation']))
-			{
-				$state = 'moderation';
-			}
-			else
-			{
-				// default an attachment with no specified visibility to true
-				$state = 'visible';
-			}
-			$this->data->set('state', $state);
+			$this->data->set('state', 'moderation');
 		}
 =================================================
 -------------------------------------------------
@@ -184,7 +174,7 @@ Future TO-DO-LIST:
 History:
 ~~~~~~~~~
      * v3.8.100 31/12/2008 08:00 AM UTC: First 3.8.x release (public)
-     * v4.0.100 26/02/2010 08:00 AM UTC: First 4.0.x release (public)
+     * v4.0.100 19/03/2010 08:00 AM UTC: First 4.0.x release (public)
 
 
 Screen Shots:
@@ -211,7 +201,7 @@ Technical Notes:
      * New Cronjobs: 0
         --------------------------
      * Installation Level: V.Easy
-     * Installation Time: ~10 seconds
+     * Installation Time: ~15 seconds
 
 
 Reference Links:
@@ -223,14 +213,14 @@ Reference Links:
 Recent Products:
 ~~~~~~~~~~~~~~~~~
 
-     * PHPKD - vB Link Verifier Bot
-	http://tools.phpkd.net/en/producthelp/url/vblvb/
+     * PHPKD - vB Link Verifier Bot * New *
+	http://go.phpkd.net/en/product/vblvb/
 
-     * Advanced Quick Reply [ Attachments - Smilie box / menu - Thread Management - AJAX ]
-	http://tools.phpkd.net/en/producthelp/url/vbaqr/
+     * PHPKD - vB Advanced Quick Reply 'Ultimate' * New *
+	http://go.phpkd.net/en/product/vbaqr/
 
-     * Advanced Quick Edit [ All Built-In BBCodes ]
-	http://tools.phpkd.net/en/producthelp/url/vbaqe/
+     * PHPKD - Advanced Quick Edit 'Ultimate'
+	http://go.phpkd.net/en/product/vbaqe/
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
