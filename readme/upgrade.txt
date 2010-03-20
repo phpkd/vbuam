@@ -3,8 +3,8 @@
      1. Upload required files to their appropriate places (ALLOW OVERWRITE):
 	includes
 	     xml
-	          bitfield_phpkd_vbafm.xml
-	     md5_sums_phpkd_vbafm.php
+	          bitfield_phpkd_vbuam.xml
+	     md5_sums_phpkd_vbuam.php
 
      2. Do the following small manual edit, open the file "includes/class_upload.php" (follow instructions relative to your vB version):
 	3.8.x:
@@ -51,7 +51,7 @@
 	     Save the modified file "includes/class_upload.php" and upload it to it's place again (ALLOW OVERWRITE).
 
 
-     3. Import the product's XML file "product-phpkd_vbafm.xml" from AdminCP (ALLOW OVERWRITE).
+     3. Import the product's XML file "product-phpkd_vbuam.xml" from AdminCP (ALLOW OVERWRITE).
 
      4. Configure usergroup settings -if required-.
 

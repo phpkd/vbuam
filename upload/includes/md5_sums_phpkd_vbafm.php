@@ -9,7 +9,7 @@
 || #     This product may be redistributed in whole or significant part under     # ||
 || #        "Creative Commons - Attribution-Noncommercial-Share Alike 3.0"        # ||
 || # 																			  # ||
-|| # -------------- 'vB Link Verifier Bot Lite' IS FREE SOFTWARE ---------------- # ||
+|| # ---------- 'vB Usergroup Attachment Moderation' IS FREE SOFTWARE ----------- # ||
 || #        http://www.phpkd.net | http://info.phpkd.net/en/license/free          # ||
 || ################################################################################ ||
 \*==================================================================================*/
@@ -17,11 +17,11 @@
 
 $md5_sums = array(
 	'/includes/xml' => array(
-		'bitfield_phpkd_vbafm.xml' => '903982a04d52f03f989c407fbf49fc05',
+		'bitfield_phpkd_vbuam.xml' => '903982a04d52f03f989c407fbf49fc05',
 	),
 );
-$md5_sum_softwareid = 'phpkd_vbafm';
-$md5_sum_versions['phpkd_vbafm'] = '4.0.100';
+$md5_sum_softwareid = 'phpkd_vbuam';
+$md5_sum_versions['phpkd_vbuam'] = '4.0.100';
 
 
 /*============================================================================*\

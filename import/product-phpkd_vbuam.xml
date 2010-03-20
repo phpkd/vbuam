@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<product productid="phpkd_vbafm" active="1">
+<product productid="phpkd_vbuam" active="1">
 	<title><![CDATA[PHPKD - Usergroup Attachment Moderation]]></title>
 	<description><![CDATA[This product adds new permission per usergroup "Follow Forum Moderation Rules", which if set to 'no' it will force all attachments posted by this usergroup to be placed into moderation queue by default.]]></description>
 	<version><![CDATA[4.0.100]]></version>
@@ -8,15 +8,15 @@
 	<author><![CDATA[$Author$]]></author>
 	<revision><![CDATA[$Revision$]]></revision>
 	<released><![CDATA[$Date$]]></released>
-	<url><![CDATA[http://tools.phpkd.net/en/producthelp/url/vbafm/]]></url>
-	<versioncheckurl><![CDATA[http://tools.phpkd.net/en/producthelp/version/vbafm/]]></versioncheckurl>
-	<extradetails><![CDATA[http://tools.phpkd.net/en/producthelp/info/vbafm/]]></extradetails>
+	<url><![CDATA[http://tools.phpkd.net/en/producthelp/url/vbuam/]]></url>
+	<versioncheckurl><![CDATA[http://tools.phpkd.net/en/producthelp/version/vbuam/]]></versioncheckurl>
+	<extradetails><![CDATA[http://tools.phpkd.net/en/producthelp/info/vbuam/]]></extradetails>
 	<dependencies>
 		<dependency dependencytype="vbulletin" minversion="3.8.0" maxversion="4.0.99" />
 	</dependencies>
 	<codes>
 		<code version="*">
-			<installcode><![CDATA[if (!file_exists(DIR . '/includes/xml/bitfield_phpkd_vbafm.xml'))
+			<installcode><![CDATA[if (!file_exists(DIR . '/includes/xml/bitfield_phpkd_vbuam.xml'))
 {
 	print_dots_stop();
 	print_cp_message('Please upload all files came with "PHPKD - Usergroup Attachment Moderation" product before installing or upgrading!');
@@ -158,7 +158,7 @@ $vbulletin->db->show_errors();]]></uninstallcode>
 	</plugins>
 	<phrases>
 		<phrasetype name="Permissions" fieldname="cppermission">
-			<phrase name="phpkd_vbafm_follow_forum_moderation_rules" date="1267168854" username="PHPKD" version="4.0.100"><![CDATA[Follow Forum Moderation Rules<dfn>If no, attachments are always placed into moderation queue by default.</dfn>]]></phrase>
+			<phrase name="phpkd_vbuam_follow_forum_moderation_rules" date="1267168854" username="PHPKD" version="4.0.100"><![CDATA[Follow Forum Moderation Rules<dfn>If no, attachments are always placed into moderation queue by default.</dfn>]]></phrase>
 		</phrasetype>
 	</phrases>
 	<options>

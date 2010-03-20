@@ -57,8 +57,8 @@ Installation Procedure:
      1. Upload required files to their appropriate places:
 	includes
 	     xml
-	          bitfield_phpkd_vbafm.xml
-	     md5_sums_phpkd_vbafm.php
+	          bitfield_phpkd_vbuam.xml
+	     md5_sums_phpkd_vbuam.php
 
      2. Do the following small manual edit, open the file "includes/class_upload.php" (follow instructions relative to your vB version):
 	3.8.x:
@@ -105,7 +105,7 @@ Installation Procedure:
 	     Save the modified file "includes/class_upload.php" and upload it to it's place again (ALLOW OVERWRITE).
 
 
-     3. Import the product's XML file "product-phpkd_vbafm.xml" from AdminCP.
+     3. Import the product's XML file "product-phpkd_vbuam.xml" from AdminCP.
 
      4. Configure usergroup settings -if required-.
 
@@ -208,8 +208,8 @@ Technical Notes:
 
 Reference Links:
 ~~~~~~~~~~~~~~~~~
-     * PHPKD.NET: http://go.phpkd.net/en/product/vbafm/
-     * vBulletin.org: http://www.vbulletin.org/forum/misc.php?do=producthelp&pid=phpkd_vbafm
+     * PHPKD.NET: http://go.phpkd.net/en/product/vbuam/
+     * vBulletin.org: http://www.vbulletin.org/forum/misc.php?do=producthelp&pid=phpkd_vbuam
 
 
 Recent Products:

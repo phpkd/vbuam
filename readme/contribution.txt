@@ -60,9 +60,9 @@
 		[LIST]
 		     [*]xml
 			[LIST]
-			      [*]bitfield_phpkd_vbafm.xml
+			      [*]bitfield_phpkd_vbuam.xml
 			[/LIST]
-		     [*]md5_sums_phpkd_vbafm.php
+		     [*]md5_sums_phpkd_vbuam.php
 		[/LIST]
 	[/LIST]
      [*]Do the following small manual edit, open the file "includes/class_upload.php" (follow instructions relative to your vB version):
@@ -91,7 +91,7 @@
 			$this->data->set('state', 'moderation');
 		}[/CODE]
 	[B]Save the modified file "includes/class_upload.php" and upload it to it's place again (ALLOW OVERWRITE).[/B]
-     [*]Import the product's XML file "product-phpkd_vbafm.xml" from AdminCP.
+     [*]Import the product's XML file "product-phpkd_vbuam.xml" from AdminCP.
      [*]Configure usergroup settings -if required-.
      [*]You're Done :).
 [/LIST]
