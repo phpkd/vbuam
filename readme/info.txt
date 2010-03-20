@@ -48,7 +48,6 @@ Features:
 	* Requires only one manual edit.
 	* Doing all default vBulletin checks & vBulletin Fully Compatible.
 
-
      |- General Features:-
 	* Per usergroup permission "Follow Forum Moderation Rules" (If no, attachments are always placed into moderation queue by default).
 
@@ -154,7 +153,6 @@ License:
      This is a human-readable summary of the Legal Code (the full license).
      http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
      _____________________________________________________________
-
 
 
 Help with:
