@@ -2,22 +2,22 @@
 /*==================================================================================*\
 || ################################################################################ ||
 || # Product Name: PHPKD - Usergroup Attachment Moderation       Version: 4.0.100 # ||
-|| # License Type: Free License                                    $Revision$ # ||
+|| # License Type: Free License                                   $Revision$ # ||
 || # ---------------------------------------------------------------------------- # ||
 || # 																			  # ||
 || #            Copyright ©2005-2010 PHP KingDom. All Rights Reserved.            # ||
 || #     This product may be redistributed in whole or significant part under     # ||
 || #        "Creative Commons - Attribution-Noncommercial-Share Alike 3.0"        # ||
 || # 																			  # ||
-|| # ---------- 'vB Usergroup Attachment Moderation' IS FREE SOFTWARE ----------- # ||
-|| #        http://www.phpkd.net | http://info.phpkd.net/en/license/free          # ||
+|| # -------- 'PHPKD - Usergroup Attachment Moderation' IS FREE SOFTWARE -------- # ||
+|| #        http://www.phpkd.net | http://info.phpkd.net/en/license/free/         # ||
 || ################################################################################ ||
 \*==================================================================================*/
 
 
 $md5_sums = array(
 	'/includes/xml' => array(
-		'bitfield_phpkd_vbuam.xml' => '903982a04d52f03f989c407fbf49fc05',
+		'bitfield_phpkd_vbuam.xml' => '5273d3757e4d813a9d17eca79e05f9db',
 	),
 );
 $md5_sum_softwareid = 'phpkd_vbuam';
