@@ -47,6 +47,7 @@ Features:
 	* Zero Additional Queries.
 	* Requires only one manual edit.
 	* Doing all default vBulletin checks & vBulletin Fully Compatible.
+	* Per usergroup permission "Follow Forum Moderation Rules" (If no, attachments are always placed into moderation queue by default).
 
 
 Installation Procedure:
