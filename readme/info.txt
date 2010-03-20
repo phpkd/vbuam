@@ -20,13 +20,18 @@ Description:
 
 
 Compatible with:
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
      * All 3.8.x/4.0.x vBulletin versions.
 
 
 Requirements:
 ~~~~~~~~~~~~~~
      * vBulletin version 3.8.x/4.0.x
+
+
+Related Products:
+~~~~~~~~~~~~~~~~~~
+     * PHPKD - Moderated Attachments Staff Notify (http://go.phpkd.net/en/product/vbasn/)
 
 
 Helpful links:
@@ -113,7 +118,7 @@ Installation Procedure:
 
 
 Upgrade Procedure:
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
      * Same as "Installation Procedure", but "Allow Overwrite" for both file uploads & product import.
 
 

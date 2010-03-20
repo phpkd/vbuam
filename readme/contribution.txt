@@ -24,6 +24,12 @@
 [/LIST]
 
 
+[U][B]Related Products:[/B][/U]
+[LIST]
+     [*][URL="http://go.phpkd.net/en/product/vbasn/"]PHPKD - Moderated Attachments Staff Notify[/URL]
+[/LIST]
+
+
 [U][B]Helpful links:[/B][/U]
 [LIST]
      [*][url="http://forum.phpkd.net/project.php?do=issuelist&projectid=2&issuetypeid=bug"]Bug Reports[/url]
