@@ -22,6 +22,20 @@
 	print_cp_message('Please upload all files came with "PHPKD - Usergroup Attachment Moderation" product before installing or upgrading!');
 }
 
+
+// look if we've already old versions of this product installed
+$existingprods = $vbulletin->db->query_first("SELECT * FROM " . TABLE_PREFIX . "product WHERE productid IN('attach_moderation')");
+if ($vbulletin->db->num_rows($existingprods))
+{
+	while ($existingprod = $vbulletin->db->fetch_array($existingprods))
+	{
+		print_dots_start("Un-Installing old versions: \"" . $existingprod['title'] . "\"<br />Version: " . $existingprod['version'] . ", ID: " . $existingprod['productid'] . ".<br />Please Wait...", ':', 'phpkd_vbaddon_uninstall_old_info');
+		delete_product($existingprod['productid']);
+		print_dots_stop();
+	}
+}
+
+
 // ######################################################################
 // ## Debug Stuff: Begin                                               ##
 // ######################################################################
